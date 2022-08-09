@@ -1,0 +1,42 @@
+.navbar-nav {
+    margin-right: 50px;
+}
+
+.navbar-nav>li {
+    margin-right: 30px;
+}
+.navRight{
+    display: flex;
+    align-items: center;
+    flex: 0.33;
+    justify-content: space-evenly;
+}
+.logout{
+    display: flex;
+    align-items: center;
+}
+.logout > span{
+    margin-right: 10px;
+}
+nav {
+    background-color: #1f92ee !important;
+}
+
+a.nav-link {
+    opacity: 1 !important;
+    color: white !important;
+    cursor: pointer;
+}
+
+li{
+    list-style: none !important; 
+}
+/* .navbar-brand{
+    color: white;
+} */
+.logo{
+    color: white;
+    margin-top: 10px !important;
+   opacity: 1 !important;
+   font-size: 20px !important;
+}

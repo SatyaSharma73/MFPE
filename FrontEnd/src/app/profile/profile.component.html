@@ -1,0 +1,31 @@
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+    <div class="card p-4">.
+        
+        <div class=" image d-flex flex-column justify-content-center align-items-center"> <button
+                class="btn btn-secondary"> <img src="{{employee.gender=='Male'?'../../assets/avatar.png':'https://i.imgur.com/wvxPV9S.png'}}" height="100"
+                    width="100" /></button> <span class="name mt-3">{{employee.name}}</span> <span
+                class="idd">UserId : @{{username}}</span>
+                
+             
+            <div class="d-flex flex-row justify-content-center align-items-center mt-3 m-5"> 
+                <span class="number">{{employee.pointsGained}} 
+                <span class="follow me-3">Point Gained</span></span> 
+            <!-- <div class=" d-flex mt-2"> <button class="btn1 btn-dark">Edit Profile</button> </div> -->
+             <!-- refresh button to update the points -->
+             <button (click)="updatePoints()" class="material-icons">refresh</button>
+            </div>
+             <p class="m-2"><strong>Age :</strong> {{employee.age}}</p>    
+            <p class="m-2"><strong>Gender :</strong> {{employee.gender}}</p>
+                <p class="m-2"><strong>Email :</strong> {{employee.email}}</p>
+                <p class="m-2"><strong>Department :</strong>  {{employee.department}}</p>
+
+                <p class="m-2"><strong>Contact Number :</strong> {{employee.contactNumber}}</p>
+            <div class=" px-2 rounded mt-4 date "> <span class="join">Personal Details</span> 
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+

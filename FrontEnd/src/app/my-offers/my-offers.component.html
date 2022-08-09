@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="alert alert-danger" *ngIf="pageError!=''">{{pageError}}</div>
+
+    <h1 class="text-center"  style="font-weight:200px; margin-top:30px;">My Offers</h1>
+    <button class="btn btn-danger" onclick="history.back(-1)">Back</button>
+    <div class="offers-content">
+        <div class="row">
+
+            <!-- if no offers are present-->
+            <div *ngIf="offers.length==0">
+                <h1 style="font-weight: 100;">No Offers Found</h1>
+            </div>
+        
+            <div *ngFor="let offer of offers " class="col-lg-4 col-md-4 col-sm-12">
+
+        <div class="card mb-4 box-shadow" >
+
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal text-center" >{{offer.name}}</h4>
+            </div>
+            <div class="card-body">
+              
+              <div class="d-flex flex-column ">
+                <div class="p-2 "><b>Posted on</b>: {{offer.openDate | date:'longDate'}}</div>
+                <div class="p-2 "><b>Engaged</b>: {{offer.engagedDate==null && offer.closedDate == null?'not yet':'engaged'}}
+                </div>
+                <div class="p-2"><b>Status</b>: {{offer.closedDate == null ? 'open':'closed'}}</div>
+                <div class="p-2"><b>Category:</b> {{offer.category}}</div>
+                <div class="p-2"><b>Likes:</b> {{offer.likes}}</div>
+            </div>
+            <a [routerLink]="['/offerDetails',offer.id]" class="btn btn-outline-primary m-1" style="border: 2px solid #6CB4EE;">Open</a><br>
+            <a [routerLink]="['/editOffer',offer.id]" class="btn btn-outline-primary m-1" style="border: 2px solid #6CB4EE;">Edit</a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+

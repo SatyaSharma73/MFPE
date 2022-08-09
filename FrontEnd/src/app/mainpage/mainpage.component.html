@@ -1,0 +1,88 @@
+<div class="container-fluid">
+    <div class="alert alert-danger " *ngIf="pageError!='' && showError" id="errordiv">
+        {{pageError}}
+        <button class="material-icons" style="float:right" (click)="closebar()">close</button>
+    </div>
+    <div class="row">
+        <!--left pane-->
+        <div class="col-lg-3 col-md-3 col-sm-12" id="left-pane">
+            <h2 class="text-center text-muted"><em>Action Center</em></h2>
+            <div class="vl">
+                <div class="d-flex flex-column">
+                    <h5 class="text-center text-muted"><em>Logged in as : <u>@{{loggedname}}</u></em></h5>
+                    <div class="p-2 "><a class="btn btn-outline-primary" routerLink="/profile">My Profile</a></div>
+                    <div class="p-2 "><a class="btn btn-outline-primary" routerLink="/addOffer">Post an offer</a></div>
+                    <div class='p-2'><a class="btn btn-outline-primary" routerLink="/myOffers">My offers</a></div>
+                    <div class="p-2 "><a class="btn btn-outline-primary" (click)="showRecentlyLiked()">view recently
+                            liked
+                            offers</a></div>
+                    <div class="p-2 "><a class="btn btn-outline-primary" (click)="filterByTopLikes()">Top likes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--right pane-->
+        <div class="col-lg-9 col-md-9 col-sm-12 " id="right-pane " style="padding-top:20px; ">
+
+            <!-- options -->
+            <div class="d-flex flex-row justify-content-between" style="width:80%;margin:auto ">
+
+
+            </div>
+
+            <p class="display-6 fw-normal text-center" style="font-weight:200px;">Public Offers</p>
+
+            <div class="p-2 d-flex align-items-center justify-content-between">
+                <div class='input-group m-1' style="width: 30%;">
+                    <input type='date' class='form-control lg-3' placeholder="Filter by posted-date (yyyy-mm-dd) "
+                        #postedDate >
+                    <div class="input-group-append ">
+                        <button class="btn btn-outline-primary" (click)="filterByPostedDate()">search</button>
+                    </div>
+                </div>
+                <select class="form-control" (change)="onCategoryChange()" #category
+                    style="width: 170px;">
+                    <option selected>Filter by category</option>
+                    <option>Electronics</option>
+                    <option>Plants</option>
+                    <option>Furniture</option>
+                    <option>Accessories</option>
+                </select>
+
+
+
+
+            </div>
+            <div *ngFor="let offer of offers " class="offer-content">
+
+                <div class="card mb-4 custom-card">
+
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal text-center">{{offer.name}}</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="d-flex flex-column ">
+                            <div class="p-2 "><b>Posted on</b>: {{offer.openDate | date:'longDate'}}</div>
+                            <hr>
+                            <div class="p-2 "><b>Engaged</b>: {{offer.engagedDate==null && offer.closedDate == null?'not
+                                yet':'engaged'}}
+                            </div>
+                            <div class="p-2"><b>Status</b>: {{offer.closedDate == null ? 'open':'closed'}}</div>
+                            <div class="p-2"><b>Category:</b> {{offer.category}}</div>
+                            <div class="p-2"><b>Likes:</b> {{offer.likes}}</div>
+                        </div>
+                        <a [routerLink]="['/offerDetails',offer.id]" class="btn btn-info">Open</a>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+            <br>
+        </div>
+    </div>
+</div>

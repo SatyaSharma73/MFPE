@@ -1,0 +1,99 @@
+
+.offer-content a {
+    width: 100%;
+}
+
+#left-pane {
+   margin-top: 5%;
+    height: 750px;
+}
+a{
+    text-decoration:none ;
+}
+#left-pane>div {
+    margin-top: 25%;
+}
+
+#left-pane a {
+    padding: 10px 30px;
+    width: 90%;
+}
+
+#right-pane {
+    padding: 0px 30px;
+}
+
+.offer-content {
+    margin-top: 40px;
+    width: 30%;
+   
+    border-bottom: none;
+    display: inline-block;
+    padding: 0px;
+    margin-right: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul>li {
+    display: inline-block;
+}
+
+input.form-control {
+    display: inline;
+}
+
+.offer-content a {
+    background-color: rgba(7, 135, 194, 0.993) !important;
+}
+
+button.material-icons {
+    border: none;
+    background: transparent;
+}
+
+.vl {
+    
+    border-right: 2px solid green;
+    height: 350px;
+  }
+
+  .card-header{
+    background: #66BFBF !important;
+}
+
+.btn-secondary{
+    border-radius: 7px;
+    
+}
+.btn-primary{
+    border-radius: 7px;
+    
+}
+.btn-success{
+    border-radius: 7px;
+    
+}
+.btn-dark{
+    border-radius: 7px;
+    
+}
+.btn-danger{
+    background-color: #876445;
+    border-radius: 7px;
+    
+}
+.card-header{
+    background: #318CE7 !important;
+    color: white !important;
+}
+.btn-info{
+color: aliceblue !important;
+}
+
+.custom-card{
+    box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.5) !important;
+    border: none !important;
+}
